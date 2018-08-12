@@ -1,0 +1,29 @@
+﻿@model Diplom.Models.Product
+
+@{
+    ViewBag.Title = "Flover";
+}
+
+<p>
+    <img alt="@Model.ProductName" src="@Model.ProductImage" />
+</p>
+
+<div id="product-details">
+    <p>
+        <em>Product:</em>
+        @Model.ProductName
+    </p>
+    <p>
+        <em>Amount:</em>
+        @Model.ProductAmountOnStore
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}", Model.ProductPrice)
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = Model.ProductId }, "")
+    </p>
+
+</div>

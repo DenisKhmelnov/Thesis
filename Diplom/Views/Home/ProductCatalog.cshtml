@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Catalog";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Магазин цветов</title>
+</head>
+<body>
+    <div>
+        <h3>Catalog</h3>
+        <table>
+            @foreach (var b in ViewBag.Products)
+            {
+                <tr>
+                    <td><a href="/Home/ProductCard/@b.ProductId"><img width="100" height="100" alt="@b.ProductName" src="@b.ProductImage" /></a></td>
+                    <td><p><a href="/Home/ProductCard/@b.ProductId">@b.ProductName</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
